@@ -10,10 +10,6 @@ class ApplicationController < ActionController::Base
     root_path
   end
   
-  def new
-    @book = Book.new
-  end
-  
   protected
 
   def configure_permitted_parameters

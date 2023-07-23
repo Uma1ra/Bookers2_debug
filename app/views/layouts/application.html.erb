@@ -13,6 +13,11 @@
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
+        
+        <div class="pl-5">
+          <%= render "layouts/errors", obj: @book %>
+        </div>
+        
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>

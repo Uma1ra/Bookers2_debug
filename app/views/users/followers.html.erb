@@ -1,0 +1,25 @@
+<h2>Follower Users</h2>
+<% if @follower_users.exists? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>image</th>
+        <th>name</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @follower_users.each do |follower| %>
+        <tr>
+          <td><%= image_tag follower.get_profile_image, size: "30x30" %> </td>
+          <td><%= follower.name %></td>
+          <td>フォロー数: <%= follower.follows.count %></td>
+          <td>フォロワー数: <%= follower.followers.count %></td>
+          <td><%= link_to "Show", user_path(follower.id) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No followers yet!</p>
+<% end %>

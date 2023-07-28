@@ -1,0 +1,11 @@
+<% if @range == "User" %>
+  <h2>User's search results for "<%= @searchword %>"</h2>
+  
+  <%= render "users/index", users: @users %>
+
+<% else %>
+  <h2>Book's search results for "<%= @searchword %>"</h2>
+  
+  <%= render "books/index", books: @books %>
+  
+<% end %>

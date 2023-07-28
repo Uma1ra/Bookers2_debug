@@ -13,22 +13,19 @@ class Book < ApplicationRecord
   end
   
   # search methods
-  def self.looks(search, searchword)
+  def self.looks(searchword, search)
     
-    if search == "perfect_match"
-      @book = Book.where("title LIKE?", "#{searchword}")
+    if search == "perfect"
+      @book = Book.where("title LIKE?", searchword)
       
-    elsif search == "forward_match"
-      @book = Book.where("title LIKE?", "#{searchword}%")
+    elsif search == "forward"
+      @book = Book.where("title LIKE?", searchword + "%")
       
-    elsif search == "backward_match"
-      @book = Book.where("title LIKE?", "%#{searchword}")
-      
-    elsif search == "partial_match"
-      @book = Book.where("title LIKE?", "%#{searchword}%")
+    elsif search == "backward"
+      @book = Book.where("title LIKE?", "%" + searchword)
       
     else
-      @book = Book.all
+      @book = Book.where("title LIKE?", "%" + searchword + "%")
       
     end
     

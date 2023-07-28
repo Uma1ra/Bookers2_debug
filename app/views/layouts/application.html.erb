@@ -12,13 +12,11 @@
   <body>
     <header>
       <%= render 'layouts/header' %>
-      <div class="">
-         <%= render "searches/search" %>
-      </div>
     </header>
     
     <main>
       <p id="notice"><%= notice %></p>
+      <%= render "searches/search" %>
       <%= yield %>
     </main>
     

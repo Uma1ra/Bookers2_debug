@@ -11,7 +11,9 @@
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
-      <%= render 'books/index',books: @books %>
+      <div id="favorite_btn_<%= @book.id %>">
+        <%= render 'books/index', books: @books %>
+      </div>
     </div>
   </div>
 </div>

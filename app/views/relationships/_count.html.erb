@@ -1,0 +1,8 @@
+ <tr>
+  <th>Follows</th>
+  <th id="follow_count"><%= link_to user.follows.count, user_follows_path(user) %></th>
+</tr>
+<tr>
+  <th>Followers</th>
+  <th id="follower_count"><%= link_to user.followers.count, user_followers_path(user) %></th>
+</tr>

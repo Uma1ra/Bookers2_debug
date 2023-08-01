@@ -16,16 +16,16 @@ class Book < ApplicationRecord
   def self.looks(searchword, search)
     
     if search == "perfect"
-      @book = Book.where("title LIKE?", searchword)
+      Book.where("title LIKE?", searchword)
       
     elsif search == "forward"
-      @book = Book.where("title LIKE?", searchword + "%")
+      Book.where("title LIKE?", searchword + "%")
       
     elsif search == "backward"
-      @book = Book.where("title LIKE?", "%" + searchword)
+      Book.where("title LIKE?", "%" + searchword)
       
     else
-      @book = Book.where("title LIKE?", "%" + searchword + "%")
+      Book.where("title LIKE?", "%" + searchword + "%")
       
     end
     

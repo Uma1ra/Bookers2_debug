@@ -1,3 +1,3 @@
-$("#follow_count").html("<%= link_to @user.follows.count, user_follows_path(@user) %>");
-$("#follower_count").html("<%= link_to @user.followers.count, user_followers_path(@user) %>");
-$("#follow_btn_<%= @user.id %>").html("<%= j(render "users/info", user: @user) %>");
+$("#follow_count").html("<%= j(render "follow-count", user: @user) %>");
+$("#follower_count").html("<%= j(render "follower-count", user: @user) %>");
+$("#follow_btn_<%= @user.id %>").html("<%= j(render "btn", user: @user) %>");

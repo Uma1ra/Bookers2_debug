@@ -8,7 +8,14 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
-    <%= render "relationships/count", user: user %>
+  <tr>
+   <th>Follows</th>
+   <th id="follow_count"><%= render "relationships/follow-count", user: user%></th>
+  </tr>
+  <tr>
+    <th>Followers</th>
+    <th id="follower_count"><%= render "relationships/follower-count", user: user%></th>
+  </tr>
 </table>
 
 <div class='row'>

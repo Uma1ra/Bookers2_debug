@@ -1,6 +1,8 @@
 <h2>Follow Users</h2>
 <% if @users.exists? %>
-  <%= render "users/index", users: @users %>
+  <div id="ff_count_right">
+    <%= render 'users/index', users: @users %>
+  </div>
 <% else %>
   <p>Not following anyone yet!</p>
 <% end %>

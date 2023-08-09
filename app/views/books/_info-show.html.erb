@@ -9,12 +9,20 @@
 	  <th><%= user.introduction %></th>
   </tr>
   <tr>
-   <th>Follows</th>
-   <th id="follow_count"><%= render "relationships/follow-count", user: user%></th>
+    <th>Follows</th>
+    <th>
+      <%= link_to user_follows_path(user.id) do %>
+        <p id="flw_count_show"><%= user.follows.count%></p>
+      <% end %>
+    </th>
   </tr>
   <tr>
     <th>Followers</th>
-    <th id="follower_count"><%= render "relationships/follower-count", user: user%></th>
+    <th>
+      <%= link_to  user_followers_path(user.id) do %>
+        <p id=flwr_count_show><%= user.followers.count %></p>
+      <% end %>
+    </th>
   </tr>
 </table>
 

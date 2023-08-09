@@ -11,8 +11,13 @@
       <tr>
         <td><%= image_tag user.get_profile_image, size: '50x50' %></td>
         <td><%= user.name %></td>
-        <td>フォロー数: <%= user.follows.count%></td>
-        <td>フォロワー数: <%= user.followers.count%></td>
+        <td>フォロー数: <span id="flw_count_show"><%= user.follows.count%></span></td>
+        <td>フォロワー数: <span id="flwr_count_show"><%= user.followers.count %></span></td>
+        <td id="follow_btn_<%= user.id %>">
+          <% if user.id != current_user.id %>
+            <%= render "relationships/btn", user: user %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', user_path(user.id) %></td>
       </tr>
     <% end %>
